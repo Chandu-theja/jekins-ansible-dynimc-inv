@@ -18,6 +18,12 @@ pipeline {
     }
      
     //Using Terrafrom can create the Servers
+    stage('aws-credentials'){
+     steps{
+  sh "export AWS_ACCESS_KEY_ID=${aws-access}"
+  sh "export AWS_SECRET_ACCESS_KEY=${aws-secret}"
+     }
+   }
     
     stage('CreateServers'){
       steps{
