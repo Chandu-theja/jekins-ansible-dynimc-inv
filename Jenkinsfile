@@ -26,6 +26,7 @@ pipeline {
          }
       }
       }
+    }
     stage('CreateServers'){
       steps{
        sh "terraform  -chdir=terraformscripts init"
@@ -43,6 +44,6 @@ pipeline {
         sh "ansible-playbook -i inventory/aws_ec2.yaml  playbooks/tomcat-setup.yaml -u ec2-user --private-key=$AWS_EC2_PRIVATE_KEY --limit tomcatservers --ssh-common-args='-o StrictHostKeyChecking=no'"
       }
     }
-  
+    
   }//stages closing
 }//pipeline closing
