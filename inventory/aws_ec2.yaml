@@ -1,8 +1,5 @@
 plugin: aws_ec2
 
-aws_access_key: AKIAUBZL63AJYOUG7O5V
-aws_secret_key: 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
-
 regions:
   - ap-south-1
 
